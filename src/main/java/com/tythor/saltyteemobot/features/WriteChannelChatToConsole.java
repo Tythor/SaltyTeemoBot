@@ -21,7 +21,7 @@ public class WriteChannelChatToConsole {
      * Subscribe to the ChannelMessage Event and write the output to the console
      */
     public void onChannelMessage(ChannelMessageEvent event) {
-        if (event.getMessage().contains("TripleFury"))
+        if (event.getMessage().contains("TripleFury") || event.getUser().getName().equals("TripleFury"))
             System.out.printf("User[%s] - Message[%s]%n", event.getUser().getName(), event.getMessage());
         betting(event);
         farming(event);

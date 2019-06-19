@@ -102,8 +102,8 @@ public class Bot {
                 configuration = mapper.readValue(is, Configuration.class);
 
                 HashMap<String, String> api = new HashMap<>();
-                api.put("twitch_client_id=", System.getenv("twitch_client_id"));
-                api.put("twitch_client_secret=", System.getenv("twitch_client_secret"));
+                api.put("twitch_client_id", System.getenv("twitch_client_id"));
+                api.put("twitch_client_secret", System.getenv("twitch_client_secret"));
                 configuration.setApi(api);
 
                 HashMap<String, String> credentials = new HashMap<>();
