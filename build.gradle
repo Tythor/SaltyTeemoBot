@@ -11,9 +11,6 @@ targetCompatibility = 1.8
 // Sets the Main-Class in the shadowJar manifest
 mainClassName = 'com.tythor.saltyteemobot.Launcher'
 
-apply plugin: 'java'
-apply plugin: 'application'
-
 // Repositories
 repositories {
     jcenter()
