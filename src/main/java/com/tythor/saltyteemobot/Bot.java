@@ -11,6 +11,7 @@ import com.tythor.saltyteemobot.features.ChannelNotificationOnSubscription;
 import com.tythor.saltyteemobot.features.WriteChannelChatToConsole;
 
 import java.io.InputStream;
+import java.util.HashMap;
 
 public class Bot {
 
@@ -88,15 +89,25 @@ public class Bot {
     private void loadConfiguration() {
         try {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-            InputStream is = classloader.getResourceAsStream("config.yaml");
+            InputStream is = classloader.getResourceAsStream("localConfig.yaml");
 
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             configuration = mapper.readValue(is, Configuration.class);
         } catch (Exception ex) {
-            ex.printStackTrace();
-            System.out.println("Unable to load Configuration ... Exiting.");
-            System.exit(1);
+            try {
+                ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+                InputStream is = classloader.getResourceAsStream("config.yaml");
+
+                ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+                configuration = mapper.readValue(is, Configuration.class);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Unable to load Configuration ... Exiting.");
+                System.exit(1);
+            }
         }
+
+        System.out.println(configuration.toString());
     }
 
     public void start() {

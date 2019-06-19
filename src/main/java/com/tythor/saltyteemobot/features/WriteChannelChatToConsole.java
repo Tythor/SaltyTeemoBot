@@ -40,7 +40,7 @@ public class WriteChannelChatToConsole {
             red = 0;
         }
 
-        if (blue + red > 75) {
+        if (blue + red > 100) {
             String team;
             int amount;
 
@@ -51,10 +51,10 @@ public class WriteChannelChatToConsole {
                 team = "red";
                 amount = red;
             }
-            amount *= 10;
+            amount *= 5;
 
             System.out.println("[Log] Blue total: " + blue + " | Red total: " + red);
-            System.out.println(String.format("[Log] Betting %d for %s", amount, team));
+            System.out.println(String.format("[Log] Betting %d for %s...", amount, team));
             event.getTwitchChat().sendMessage(event.getChannel().getName(), String.format("!%s %d", team, amount));
 
             blue = 0;

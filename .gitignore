@@ -44,6 +44,7 @@ local.properties
 
 # Config files
 *.yaml
+!config.yaml
 
 # Logs / Save Files
 config/*
