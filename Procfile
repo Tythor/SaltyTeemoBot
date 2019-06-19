@@ -1,2 +1,2 @@
-web: build/install/AuroraBot/bin/AuroraBot
-worker: build/install/AuroraBot/bin/AuroraBot
+web: build/install/SaltyTeemoBot/bin/SaltyTeemoBot
+worker: build/install/SaltyTeemoBot/bin/SaltyTeemoBot
