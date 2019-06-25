@@ -44,7 +44,7 @@ public class WriteChannelChatToConsole {
             String team;
             int amount;
 
-            if (blue < red) {
+            if (blue > red) {
                 team = "blue";
                 amount = blue;
             } else {
