@@ -40,11 +40,11 @@ public class WriteChannelChatToConsole {
             red = 0;
         }
 
-        if (blue + red > 100) {
+        if (blue + red > 50) {
             String team;
             int amount;
 
-            if (blue < red) {
+            if (blue > red) {
                 team = "blue";
                 amount = blue;
             } else {
